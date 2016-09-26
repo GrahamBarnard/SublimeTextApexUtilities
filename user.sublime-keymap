@@ -1,0 +1,13 @@
+[
+	{ "keys": ["option+r"], "command": "refresh_active_file" },
+	{ "keys": ["option+o"], "command": "run_apex_unit_tests" },
+	{ "keys": ["option+w"], "command": "open_active_sfdc_url" },
+	{ "keys": ["option+d"], "command": "system_debug" },
+	{ "keys": ["shift+option+d"], "command": "system_debug_size" },
+	{ "keys": ["option+a"], "command": "system_assert" },
+	{ "keys": ["option+n"], "command": "system_not_assert" },
+	{ "keys": ["option+s"], "command": "system_assert_size" },
+	{ "keys": ["option+b"], "command": "header_comment" },
+	{ "keys": ["option+super+up"], "command": "upper_case" },
+	{ "keys": ["option+super+down"], "command": "lower_case" }
+]
