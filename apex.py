@@ -18,6 +18,23 @@ class SystemDebugCommand(sublime_plugin.TextCommand):
 			self.view.insert(edit, region.end(), debug_end_text)
 			self.view.insert(edit, region.begin(), debug_start_text)
 
+class SystemDebugSizeCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		for region in self.view.sel():
+
+			if not region.empty():
+				debug_start_text = "System.debug(LoggingLevel.ERROR, '" + self.view.substr(region).replace("'","").replace("+","") + ".size(): ' + "
+				debug_end_text = ".size());"
+			elif sublime.get_clipboard():
+				debug_start_text = "System.debug(LoggingLevel.ERROR, '" + sublime.get_clipboard().replace("'","").replace("+","") + ".size(): ' + " + sublime.get_clipboard()
+				debug_end_text = ".size());\n"
+			else:			
+	   			debug_start_text = "System.debug(LoggingLevel.ERROR, '"
+	   			debug_end_text = ".size());"
+
+			self.view.insert(edit, region.end(), debug_end_text)
+			self.view.insert(edit, region.begin(), debug_start_text)
+
 class SystemAssertCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		for region in self.view.sel():
